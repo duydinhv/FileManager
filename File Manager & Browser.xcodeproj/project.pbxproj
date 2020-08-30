@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51F2F1724EBCEC1000B1350 /* EditFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F2F1624EBCEC1000B1350 /* EditFile.swift */; };
+		A51F2F1924EBDFB8000B1350 /* FavoriteEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F2F1824EBDFB8000B1350 /* FavoriteEdit.swift */; };
+		A57B716C24F39974009C74CD /* FTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B716B24F39974009C74CD /* FTP.swift */; };
+		A57B716E24F3B23B009C74CD /* passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B716D24F3B23B009C74CD /* passcode.swift */; };
+		A57B717024F3B74D009C74CD /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B716F24F3B74D009C74CD /* Sort.swift */; };
 		A58A667724E2386C0078E704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A667624E2386C0078E704 /* AppDelegate.swift */; };
 		A58A667924E2386C0078E704 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A667824E2386C0078E704 /* SceneDelegate.swift */; };
 		A58A667B24E2386C0078E704 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A667A24E2386C0078E704 /* FirstViewController.swift */; };
@@ -14,9 +19,25 @@
 		A58A668024E2386C0078E704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58A667E24E2386C0078E704 /* Main.storyboard */; };
 		A58A668224E2386D0078E704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58A668124E2386D0078E704 /* Assets.xcassets */; };
 		A58A668524E2386D0078E704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58A668324E2386D0078E704 /* LaunchScreen.storyboard */; };
+		A5FE218124E4D94C0002F6B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE218024E4D94C0002F6B4 /* ViewController.swift */; };
+		A5FE218324E4EB440002F6B4 /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE218224E4EB440002F6B4 /* CloudViewController.swift */; };
+		A5FE218524E4EF350002F6B4 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE218424E4EF350002F6B4 /* SettingController.swift */; };
+		A5FE218724E4F7310002F6B4 /* SecondCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE218624E4F7310002F6B4 /* SecondCloudView.swift */; };
+		E109D63A24F8F5AB005A7A18 /* Water Spell.html in Resources */ = {isa = PBXBuildFile; fileRef = E109D63524F8F5AB005A7A18 /* Water Spell.html */; };
+		E109D63B24F8F5AB005A7A18 /* Parapluie Spell.txt in Resources */ = {isa = PBXBuildFile; fileRef = E109D63624F8F5AB005A7A18 /* Parapluie Spell.txt */; };
+		E109D63C24F8F5AB005A7A18 /* Dark Magic.zip in Resources */ = {isa = PBXBuildFile; fileRef = E109D63724F8F5AB005A7A18 /* Dark Magic.zip */; };
+		E109D63D24F8F5AB005A7A18 /* Light Charm.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E109D63824F8F5AB005A7A18 /* Light Charm.pdf */; };
+		E109D63E24F8F5AB005A7A18 /* Cover Charm.docx in Resources */ = {isa = PBXBuildFile; fileRef = E109D63924F8F5AB005A7A18 /* Cover Charm.docx */; };
+		E109D64324F8F60F005A7A18 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109D64224F8F60F005A7A18 /* File.swift */; };
+		E109D64524F8FA75005A7A18 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109D64424F8FA75005A7A18 /* FileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A51F2F1624EBCEC1000B1350 /* EditFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFile.swift; sourceTree = "<group>"; };
+		A51F2F1824EBDFB8000B1350 /* FavoriteEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEdit.swift; sourceTree = "<group>"; };
+		A57B716B24F39974009C74CD /* FTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTP.swift; sourceTree = "<group>"; };
+		A57B716D24F3B23B009C74CD /* passcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passcode.swift; sourceTree = "<group>"; };
+		A57B716F24F3B74D009C74CD /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		A58A667324E2386C0078E704 /* File Manager & Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File Manager & Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58A667624E2386C0078E704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58A667824E2386C0078E704 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +47,17 @@
 		A58A668124E2386D0078E704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58A668424E2386D0078E704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A58A668624E2386D0078E704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5FE218024E4D94C0002F6B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5FE218224E4EB440002F6B4 /* CloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
+		A5FE218424E4EF350002F6B4 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		A5FE218624E4F7310002F6B4 /* SecondCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCloudView.swift; sourceTree = "<group>"; };
+		E109D63524F8F5AB005A7A18 /* Water Spell.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Water Spell.html"; sourceTree = "<group>"; };
+		E109D63624F8F5AB005A7A18 /* Parapluie Spell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Parapluie Spell.txt"; sourceTree = "<group>"; };
+		E109D63724F8F5AB005A7A18 /* Dark Magic.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "Dark Magic.zip"; sourceTree = "<group>"; };
+		E109D63824F8F5AB005A7A18 /* Light Charm.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Light Charm.pdf"; sourceTree = "<group>"; };
+		E109D63924F8F5AB005A7A18 /* Cover Charm.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cover Charm.docx"; sourceTree = "<group>"; };
+		E109D64224F8F60F005A7A18 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		E109D64424F8FA75005A7A18 /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +74,9 @@
 		A58A666A24E2386C0078E704 = {
 			isa = PBXGroup;
 			children = (
+				E109D63424F8F575005A7A18 /* Resources */,
+				E109D64124F8F607005A7A18 /* File */,
+				E109D63F24F8F5C0005A7A18 /* View Controller */,
 				A58A667524E2386C0078E704 /* File Manager & Browser */,
 				A58A667424E2386C0078E704 /* Products */,
 			);
@@ -58,16 +93,53 @@
 		A58A667524E2386C0078E704 /* File Manager & Browser */ = {
 			isa = PBXGroup;
 			children = (
+				A58A667E24E2386C0078E704 /* Main.storyboard */,
 				A58A667624E2386C0078E704 /* AppDelegate.swift */,
 				A58A667824E2386C0078E704 /* SceneDelegate.swift */,
-				A58A667A24E2386C0078E704 /* FirstViewController.swift */,
-				A58A667C24E2386C0078E704 /* SecondViewController.swift */,
-				A58A667E24E2386C0078E704 /* Main.storyboard */,
 				A58A668124E2386D0078E704 /* Assets.xcassets */,
 				A58A668324E2386D0078E704 /* LaunchScreen.storyboard */,
 				A58A668624E2386D0078E704 /* Info.plist */,
+				A5FE218224E4EB440002F6B4 /* CloudViewController.swift */,
+				A5FE218424E4EF350002F6B4 /* SettingController.swift */,
+				A5FE218624E4F7310002F6B4 /* SecondCloudView.swift */,
+				A51F2F1624EBCEC1000B1350 /* EditFile.swift */,
+				A51F2F1824EBDFB8000B1350 /* FavoriteEdit.swift */,
+				A57B716B24F39974009C74CD /* FTP.swift */,
+				A57B716D24F3B23B009C74CD /* passcode.swift */,
+				A57B716F24F3B74D009C74CD /* Sort.swift */,
 			);
 			path = "File Manager & Browser";
+			sourceTree = "<group>";
+		};
+		E109D63424F8F575005A7A18 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E109D63924F8F5AB005A7A18 /* Cover Charm.docx */,
+				E109D63724F8F5AB005A7A18 /* Dark Magic.zip */,
+				E109D63824F8F5AB005A7A18 /* Light Charm.pdf */,
+				E109D63624F8F5AB005A7A18 /* Parapluie Spell.txt */,
+				E109D63524F8F5AB005A7A18 /* Water Spell.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E109D63F24F8F5C0005A7A18 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A58A667A24E2386C0078E704 /* FirstViewController.swift */,
+				A5FE218024E4D94C0002F6B4 /* ViewController.swift */,
+				A58A667C24E2386C0078E704 /* SecondViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		E109D64124F8F607005A7A18 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				E109D64224F8F60F005A7A18 /* File.swift */,
+				E109D64424F8FA75005A7A18 /* FileCell.swift */,
+			);
+			path = File;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +202,12 @@
 			files = (
 				A58A668524E2386D0078E704 /* LaunchScreen.storyboard in Resources */,
 				A58A668224E2386D0078E704 /* Assets.xcassets in Resources */,
+				E109D63A24F8F5AB005A7A18 /* Water Spell.html in Resources */,
 				A58A668024E2386C0078E704 /* Main.storyboard in Resources */,
+				E109D63C24F8F5AB005A7A18 /* Dark Magic.zip in Resources */,
+				E109D63B24F8F5AB005A7A18 /* Parapluie Spell.txt in Resources */,
+				E109D63E24F8F5AB005A7A18 /* Cover Charm.docx in Resources */,
+				E109D63D24F8F5AB005A7A18 /* Light Charm.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +218,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FE218324E4EB440002F6B4 /* CloudViewController.swift in Sources */,
+				A51F2F1924EBDFB8000B1350 /* FavoriteEdit.swift in Sources */,
+				A57B716C24F39974009C74CD /* FTP.swift in Sources */,
+				E109D64524F8FA75005A7A18 /* FileCell.swift in Sources */,
+				A5FE218124E4D94C0002F6B4 /* ViewController.swift in Sources */,
 				A58A667D24E2386C0078E704 /* SecondViewController.swift in Sources */,
 				A58A667B24E2386C0078E704 /* FirstViewController.swift in Sources */,
 				A58A667724E2386C0078E704 /* AppDelegate.swift in Sources */,
 				A58A667924E2386C0078E704 /* SceneDelegate.swift in Sources */,
+				A5FE218724E4F7310002F6B4 /* SecondCloudView.swift in Sources */,
+				E109D64324F8F60F005A7A18 /* File.swift in Sources */,
+				A5FE218524E4EF350002F6B4 /* SettingController.swift in Sources */,
+				A51F2F1724EBCEC1000B1350 /* EditFile.swift in Sources */,
+				A57B716E24F3B23B009C74CD /* passcode.swift in Sources */,
+				A57B717024F3B74D009C74CD /* Sort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,12 +377,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7X3D98TXTN;
 				INFOPLIST_FILE = "File Manager & Browser/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Dat.File-Manager---Browser";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.File-Browser-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -306,12 +396,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7X3D98TXTN;
 				INFOPLIST_FILE = "File Manager & Browser/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Dat.File-Manager---Browser";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.File-Browser-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
