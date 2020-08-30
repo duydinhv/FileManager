@@ -12,7 +12,6 @@ import QuickLook
 
 class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var favoriteVC: SecondViewController?
     weak var tappedCell: FileCell?
     var files = File.loadFiles()
     @IBOutlet weak var collectionView: UICollectionView!
@@ -91,9 +90,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
         
         let addToFavorite = UIAction(title: "Add to favorite", image: UIImage(systemName: "star")) { _ in
-            self.files[index].isFavorite = true
-            let vc = SecondViewController()
-            vc.allFile[index].isFavorite = true
+            
         }
         
         let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { _ in

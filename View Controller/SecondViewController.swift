@@ -9,8 +9,7 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-    var fileUrls: [URL] = []
+    
     var allFile = File.loadFiles()
     var files = [File]()
     
@@ -21,13 +20,6 @@ class SecondViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        self.collectionView.reloadData()
-        print("count \(files.count)")
     }
 }
 
