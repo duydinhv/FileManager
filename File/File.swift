@@ -11,6 +11,7 @@ import QuickLook
 
 class File: NSObject {
     
+    static var files = File.loadFiles()
     var isFavorite: Bool = false
     let url: URL
 
@@ -93,6 +94,19 @@ extension File {
             } catch {
                 print("error \(error.localizedDescription)")
             }
+        }
+    }
+    
+    static func renameFile(oldName: String, newName: String) {
+        do {
+            let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            let documentDirectory = URL(fileURLWithPath: path)
+            let originPath = documentDirectory.appendingPathComponent(oldName)
+            let destinationPath = documentDirectory.appendingPathComponent(newName)
+            try FileManager.default.moveItem(at: originPath, to: destinationPath)
+            self.files = File.loadFiles()
+        } catch {
+            print(error)
         }
     }
 }

@@ -13,7 +13,15 @@ import QuickLook
 class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     weak var tappedCell: FileCell?
-    var files = File.loadFiles()
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredFile: [File] = []
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func addButtonDidTapped(_ sender: UIButton) {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -41,21 +49,29 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.present(optionMenu, animated: true, completion: nil)
     }
     
+    // MARK: viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+
     }
 
+    // MARK: Context menu and action sheet
     func addFolderAlert() {
         let alert = UIAlertController(title: "Add Folder", message: "insert folder's name", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (_) in
             if let title = alert.textFields?[0].text {
                 File.createFolder(title: title)
-                self.files = File.loadFiles()
                 self.collectionView.reloadData()
             }
         }))
@@ -64,44 +80,35 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         present(alert, animated: true, completion: nil)
     }
     
-    func contextMenu(url: URL, index: Int) -> UIMenu {
+    func contextMenu(url: URL, indexPath: IndexPath) -> UIMenu {
         var actions = [UIAction]()
         let rename = UIAction(title: "Rename", image: UIImage(systemName: "pencil")) { _ in
-            let alert = UIAlertController(title: "Change folder name", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Change document name", message: nil, preferredStyle: .alert)
             alert.addTextField(configurationHandler: nil)
+            alert.textFields?[0].text = File.files[indexPath.row].name
             alert.addAction(UIAlertAction(title: "Change", style: .default, handler: { _ in
                 if let newTitle = alert.textFields?[0].text {
-                    do {
-                        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-                        let documentDirectory = paths[0]
-                        let documentURL = URL(string: documentDirectory)!
-                        let originPath = documentURL.appendingPathComponent(self.files[index].name)
-                        let destinationPath = documentURL.appendingPathComponent(newTitle)
-                        try FileManager.default.moveItem(at: originPath, to: destinationPath)
-                        self.files = File.loadFiles()
-                        self.collectionView.reloadData()
-                    } catch {
-                        print(error)
-                    }
+                    File.renameFile(oldName: File.files[indexPath.row].name, newName: newTitle)
+                    self.collectionView.reloadData()
                 }
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
         
         let addToFavorite = UIAction(title: "Add to favorite", image: UIImage(systemName: "star")) { _ in
-            
+            File.files[indexPath.row].isFavorite = true
         }
         
         let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { _ in
-            let controller = UIActivityViewController(activityItems: [self.files[index].url], applicationActivities: nil)
+            let controller = UIActivityViewController(activityItems: [File.files[indexPath.row].url], applicationActivities: nil)
             controller.excludedActivityTypes = [.airDrop, .postToFacebook, .copyToPasteboard, .message, .postToTwitter, .markupAsPDF]
             self.present(controller, animated: true)
         }
         
         let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
             File.removeItem(url: url)
-            self.files = File.loadFiles()
+            File.files = File.loadFiles()
             self.collectionView.reloadData()
         }
         
@@ -113,8 +120,20 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         return UIMenu(title: "", children: actions)
     }
     
+    // MARK: Search func
+    func filterContentForSearchText(_ searchText: String) {
+        filteredFile = File.files.filter { (file: File) -> Bool in
+            return file.name.lowercased().contains(searchText.lowercased())
+        }
+        self.collectionView.reloadData()
+    }
+    
+    // MARK: Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        files.count
+        if isFiltering {
+            return filteredFile.count
+        }
+        return File.files.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -122,7 +141,18 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
             else {
                 return UICollectionViewCell()
         }
-        cell.update(with: files[indexPath.row])
+        let file: File
+        if isFiltering {
+            file = filteredFile[indexPath.row]
+        } else {
+            file = File.files[indexPath.row]
+        }
+        cell.nameLabel.text = file.name
+        file.generateThumbnail { image in
+            DispatchQueue.main.async {
+                cell.thumbnailImageView.image = image
+            }
+        }
         return cell
     }
     
@@ -138,18 +168,18 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { action in
-            return self.contextMenu(url: self.files[indexPath.row].url, index: indexPath.row)
+            return self.contextMenu(url: File.files[indexPath.row].url, indexPath: indexPath)
         })
     }
 }
 
 extension FirstViewController: QLPreviewControllerDataSource {
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-        files.count
+        File.files.count
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        files[index]
+        File.files[index]
     }
 }
 
@@ -170,3 +200,9 @@ extension FirstViewController: QLPreviewControllerDelegate {
     }
 }
 
+extension FirstViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
+}

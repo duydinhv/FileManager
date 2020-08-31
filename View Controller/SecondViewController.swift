@@ -10,8 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var allFile = File.loadFiles()
-    var files = [File]()
+    var favoriteFiles = [File]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -20,12 +19,27 @@ class SecondViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        File.files.forEach { file in
+            if file.isFavorite == true {
+                if !favoriteFiles.contains(file) {
+                    favoriteFiles.append(file)
+                }
+            }
+        }
+        
+        self.collectionView.reloadData()
     }
 }
 
 extension SecondViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        files.count
+        favoriteFiles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -33,7 +47,7 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
             else {
                 return UICollectionViewCell()
         }
-        cell.update(with: files[indexPath.row])
+        cell.update(with: favoriteFiles[indexPath.row])
         return cell
     }
     

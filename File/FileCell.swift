@@ -18,9 +18,9 @@ class FileCell: UICollectionViewCell {
         nameLabel.text = file.name
         
         file.generateThumbnail { [weak self] image in
-        DispatchQueue.main.async {
-          self?.thumbnailImageView.image = image
+            DispatchQueue.main.async {
+                self?.thumbnailImageView.image = image
+            }
         }
-      }
     }
 }
